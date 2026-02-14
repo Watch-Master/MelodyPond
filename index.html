@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Stream Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="player-container">
+        <div class="header">
+            <h1>Library</h1>
+            <button id="theme-toggle">☀️</button>
+        </div>
+        <div class="now-playing">
+            <h2 id="current-title">Select a track</h2>
+            <audio id="audio-player" preload="metadata"></audio>
+            <div class="progress-container" id="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
+            <div class="time-display"><span id="current-time">0:00</span><span id="duration">0:00</span></div>
+            <div class="controls-row">
+                <button class="ctrl-btn" onclick="playSong(currentIndex - 1)">⏮</button>
+                <button class="ctrl-btn" onclick="skip(-10)">-10s</button>
+                <button class="ctrl-btn main-btn" id="play-pause-btn" onclick="togglePlay()">▶</button>
+                <button class="ctrl-btn" onclick="skip(10)">+10s</button>
+                <button class="ctrl-btn" onclick="playSong(currentIndex + 1)">⏭</button>
+            </div>
+            <div class="extra-controls">
+                <select id="speed-select"><option value="0.5">0.5x</option><option value="1" selected>1x</option><option value="1.5">1.5x</option><option value="2">2x</option></select>
+                <select id="sleep-timer"><option value="0">Sleep Off</option><option value="15">15m</option><option value="30">30m</option><option value="60">60m</option></select>
+            </div>
+            <div class="volume-controls">🔈<input type="range" id="volume-slider" min="0" max="1" step="0.01">🔊</div>
+        </div>
+        <div class="search-box">
+            <div class="search-row"><input type="text" id="search-input" placeholder="Search..."><button id="reset-order">🔄</button></div>
+        </div>
+        <ul id="playlist"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

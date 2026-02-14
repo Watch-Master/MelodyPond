@@ -1,0 +1,17 @@
+:root { --bg: #121212; --card: #1e1e1e; --text: #fff; --accent: #1db954; --border: #333; }
+.light-mode { --bg: #f4f7f6; --card: #fff; --text: #121212; --accent: #007bff; --border: #ddd; }
+body { background: var(--bg); color: var(--text); font-family: sans-serif; display: flex; justify-content: center; padding: 20px; transition: 0.3s; }
+.player-container { width: 100%; max-width: 480px; background: var(--card); padding: 25px; border-radius: 20px; border: 1px solid var(--border); }
+.header { display: flex; justify-content: space-between; align-items: center; }
+.progress-container { background: var(--border); height: 10px; border-radius: 5px; cursor: pointer; margin-top: 20px; position: relative; }
+.progress-bar { background: var(--accent); height: 100%; width: 0%; border-radius: 5px; position: relative; z-index: 2; }
+.chapter-marker { position: absolute; top: 0; width: 3px; height: 100%; background: rgba(255,255,255,0.4); z-index: 5; }
+.controls-row { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px 0; }
+.ctrl-btn { background: var(--border); color: var(--text); border: none; padding: 10px; border-radius: 8px; cursor: pointer; }
+.main-btn { font-size: 1.5rem; padding: 10px 25px; background: var(--accent); color: white; }
+.volume-controls { display: flex; align-items: center; gap: 10px; }
+#volume-slider { flex-grow: 1; accent-color: var(--accent); }
+ul { list-style: none; padding: 0; max-height: 300px; overflow-y: auto; margin-top: 20px; }
+li { display: flex; align-items: center; padding: 10px; border-bottom: 1px solid var(--border); cursor: grab; }
+li.active { border-left: 4px solid var(--accent); background: rgba(29, 185, 84, 0.1); }
+.folder-tag { font-size: 0.7rem; color: var(--accent); opacity: 0.8; text-transform: uppercase; }
